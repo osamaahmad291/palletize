@@ -1,22 +1,22 @@
 <p>
-  <button (click)="changePosition()">Change element position</button>
+  <button >Change element position</button>
 </p>
 <div class="container">
 
-  <div *ngFor="let item of dragElements; let i=index" >
+  <!-- <div  > -->
 
-    <div class="example-box" cdkDrag  [cdkDragFreeDragPosition]="item" (cdkDragEnded)=update(i,$event)>
+    <div [attr.id]="'id'+i" *ngFor="let item of dragElements; let i=index"  class="example-box" cdkDrag  [cdkDragFreeDragPosition]="item" (cdkDragEnded)=update(i,$event)>
      <div>
        {{item.x}} , {{item.y}}
      </div>
       <!-- <button mat-button color="primary">Primary</button> -->
-      <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-        <mat-icon (click)="rotate(i)">rotate_left</mat-icon>
+      <button mat-icon-button color="primary" aria-label="Rotate 90 degree">
+        <mat-icon (click)="rotateImage(i)">rotate_left</mat-icon>
       </button>
     </div>
   </div>
 
-</div>
+<!-- </div> -->
 
 <!-- Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
