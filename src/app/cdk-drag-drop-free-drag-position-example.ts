@@ -52,5 +52,4 @@ export class CdkDragDropFreeDragPositionExample  {
     console.log('id' + index);
     document.getElementById('id' + index).style.transform = `translate3d(${this.dragElements[index].x}px, ${this.dragElements[index].y}px, 0px) rotate(${this.dragElements[index].r}deg)`;
   }
-
 }
