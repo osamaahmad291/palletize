@@ -14,29 +14,9 @@ export class CdkDragDropFreeDragPositionExample  {
 
   dragElements = [
     {
-      'x': 0, 'y': 0, 'r': 0
+      'x': 0, 'y': 700, 'r': 0
     },
-    {
-      'x': 10, 'y': 0, 'r': 0
-    },
-    {
-      'x': 100
-      ,
-      'y': 150
-      ,
-      'r':
-        90
-    },
-    {
-      'x': 20, 'y': 30, 'r': 0
-    },
-    {
-      'x': 0, 'y': 0, 'r': 0
-    }
   ];
-
-  dragPosition = { x: 0, y: 0 };
-
 
   update(index: any, event: any) {
     console.log(event, index);
@@ -51,5 +31,9 @@ export class CdkDragDropFreeDragPositionExample  {
     }
     console.log('id' + index);
     document.getElementById('id' + index).style.transform = `translate3d(${this.dragElements[index].x}px, ${this.dragElements[index].y}px, 0px) rotate(${this.dragElements[index].r}deg)`;
+  }
+
+  addElement() {
+    this.dragElements.push({'x': 0, 'y': 0, 'r': 0});
   }
 }

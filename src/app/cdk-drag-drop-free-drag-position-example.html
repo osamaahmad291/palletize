@@ -1,6 +1,6 @@
-<p>
-  <button >Change element position</button>
-</p>
+
+<button id="add" mat-raised-button color="primary" (click)="addElement()">Add element</button>
+
 <div class="container">
 
   <!-- <div  > -->
@@ -10,7 +10,7 @@
        {{item.x}} , {{item.y}}
      </div>
       <!-- <button mat-button color="primary">Primary</button> -->
-      <button mat-icon-button color="primary" aria-label="Rotate 90 degree">
+      <button mat-button aria-label="Rotate 90 degree">
         <mat-icon (click)="rotateImage(i)">rotate_left</mat-icon>
       </button>
     </div>
