@@ -8,9 +8,10 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
   templateUrl: 'cdk-drag-drop-free-drag-position-example.html',
   styleUrls: ['cdk-drag-drop-free-drag-position-example.css'],
 })
-export class CdkDragDropFreeDragPositionExample  {
+export class CdkDragDropFreeDragPositionExample {
 
-  // constructor(private _sanitizer: DomSanitizer) { }
+  xTemplate = 0;
+  ytemplate = 0;
 
   dragElements = [
     {
@@ -34,6 +35,7 @@ export class CdkDragDropFreeDragPositionExample  {
   }
 
   addElement() {
-    this.dragElements.push({'x': 0, 'y': 0, 'r': 0});
+    this.dragElements.push({ 'x': 0, 'y': this.ytemplate, 'r': 0 });
+    this.ytemplate += 30;
   }
 }
