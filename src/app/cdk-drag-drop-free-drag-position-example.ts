@@ -1,5 +1,5 @@
 import { Component, OnChanges } from '@angular/core';
-
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 /**
  * @title Programmatically setting the free drag position
  */
@@ -8,7 +8,9 @@ import { Component, OnChanges } from '@angular/core';
   templateUrl: 'cdk-drag-drop-free-drag-position-example.html',
   styleUrls: ['cdk-drag-drop-free-drag-position-example.css'],
 })
-export class CdkDragDropFreeDragPositionExample implements OnChanges {
+export class CdkDragDropFreeDragPositionExample  {
+
+  // constructor(private _sanitizer: DomSanitizer) { }
 
   dragElements = [
     {
@@ -23,7 +25,7 @@ export class CdkDragDropFreeDragPositionExample implements OnChanges {
       'y': 150
       ,
       'r':
-        0
+        90
     },
     {
       'x': 20, 'y': 30, 'r': 0
@@ -35,13 +37,6 @@ export class CdkDragDropFreeDragPositionExample implements OnChanges {
 
   dragPosition = { x: 0, y: 0 };
 
-  ngOnChanges() {
-    this.dragElements = this.dragElements;
-  }
-
-  changePosition() {
-    this.dragPosition = { x: this.dragPosition.x + 50, y: this.dragPosition.y + 50 };
-  }
 
   update(index: any, event: any) {
     console.log(event, index);
@@ -49,15 +44,13 @@ export class CdkDragDropFreeDragPositionExample implements OnChanges {
     this.dragElements[index].y += event.distance.y;
   }
 
-  rotate(i: number) {
-    const temp = this.dragElements[i].x;
-    this.dragElements[i].x = this.dragElements[i].y;
-    this.dragElements[i].y = temp;
-    this.ngOnChanges();
+  rotateImage(index: any) {
+    this.dragElements[index].r += 90;
+    if (this.dragElements[index].r >= 360) {
+      this.dragElements[index].r -= 360;
+    }
+    console.log('id' + index);
+    document.getElementById('id' + index).style.transform = `translate3d(${this.dragElements[index].x}px, ${this.dragElements[index].y}px, 0px) rotate(${this.dragElements[index].r}deg)`;
   }
+
 }
-
-
-/**  Copyright 2020 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
