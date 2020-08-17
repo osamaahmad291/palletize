@@ -1,13 +1,8 @@
-
 <button id="add" mat-raised-button color="primary" (click)="addElement()">Add element</button>
 
 <div class="container">
-    <div [attr.id]="'id'+i" *ngFor="let item of dragElements; let i=index"  class="example-box" cdkDrag  [cdkDragFreeDragPosition]="item" (cdkDragEnded)=update(i,$event)>
-     <div>
-       {{item.x}} , {{item.y}}
-     </div>
-      <button mat-button aria-label="Rotate 90 degree">
-        <mat-icon (click)="rotateImage(i)">rotate_left</mat-icon>
-      </button>
-    </div>
+  <div [attr.id]="'id'+i" *ngFor="let item of dragElements; let i=index" class="example-box" cdkDrag
+    [cdkDragFreeDragPosition]="item" (cdkDragEnded)=update(i,$event)>
+    <app-box [item]="item" [index]="i" (rotate)="rotateImage($event)"></app-box>
   </div>
+</div>

@@ -9,6 +9,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoMaterialModule} from './app/material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import {BoxComponent} from './app/box/box.component';
 
 import {CdkDragDropFreeDragPositionExample} from './app/cdk-drag-drop-free-drag-position-example';
 
@@ -26,7 +27,7 @@ import {CdkDragDropFreeDragPositionExample} from './app/cdk-drag-drop-free-drag-
     ReactiveFormsModule,
   ],
   entryComponents: [CdkDragDropFreeDragPositionExample],
-  declarations: [CdkDragDropFreeDragPositionExample],
+  declarations: [CdkDragDropFreeDragPositionExample, BoxComponent],
   bootstrap: [CdkDragDropFreeDragPositionExample],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
