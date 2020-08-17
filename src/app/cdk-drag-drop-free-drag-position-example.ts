@@ -36,6 +36,6 @@ export class CdkDragDropFreeDragPositionExample {
 
   addElement() {
     this.dragElements.push({ 'x': 0, 'y': this.ytemplate, 'r': 0 });
-    this.ytemplate += 30;
+    this.ytemplate += 100;
   }
 }
