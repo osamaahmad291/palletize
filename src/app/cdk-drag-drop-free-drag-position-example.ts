@@ -23,6 +23,8 @@ export class CdkDragDropFreeDragPositionExample {
     console.log(event, index);
     this.dragElements[index].x += event.distance.x;
     this.dragElements[index].y += event.distance.y;
+    document.getElementById('id' + index).style.transform = `translate3d(${this.dragElements[index].x}px, ${this.dragElements[index].y}px, 0px) rotate(${this.dragElements[index].r}deg)`;
+ 
   }
 
   rotateImage(index: any) {
