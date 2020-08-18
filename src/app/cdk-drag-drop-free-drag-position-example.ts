@@ -30,9 +30,13 @@ export class CdkDragDropFreeDragPositionExample {
       if (this.dragElements[index] !== element) {
         if (this.dragElements[index].r === 0) {
           if (this.dragElements[index].x < element.x && this.dragElements[index].x + 150 >= element.x) {
-            document.getElementById('id' + index).style.backgroundColor = `red`;
-          } else if (this.dragElements[index].x > element.x && this.dragElements[index].x  <= element.x + 150) {
-            document.getElementById('id' + index).style.backgroundColor = `red`;
+            if (this.dragElements[index].y < element.y && this.dragElements[index].y + 100 >= element.y) {
+              document.getElementById('id' + index).style.backgroundColor = `red`;
+            }
+          } else if (this.dragElements[index].x > element.x && this.dragElements[index].x <= element.x + 150) {
+            if (this.dragElements[index].y > element.y && this.dragElements[index].y <= element.y + 100) {
+              document.getElementById('id' + index).style.backgroundColor = `red`;
+            }
           } else {
             document.getElementById('id' + index).style.backgroundColor = `white`;
           }
